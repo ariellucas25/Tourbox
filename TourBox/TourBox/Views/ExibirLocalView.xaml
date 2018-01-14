@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TourBox.Views.ExibirLocalView"
+             Title="{Binding Local.Nome}">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+			Text="Compartilhar"
+            Priority = "0"
+            Order="Primary"
+   		/>
+        <ToolbarItem 
+			Text="Edição (Apenas para o autor)"
+            Priority = "0"
+            Order="Secondary"
+		/>
+        <ToolbarItem
+            Text="Denunciar"
+            Priority = "0"
+            Order="Secondary"
+		/>
+        
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Image Source="{Binding Photo}"
+                       Aspect="AspectFill"
+                       HeightRequest="250"
+                       >
+                </Image>
+                <Label
+                        Text="{Binding Local.Nome}"
+                        TextColor="White"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        BackgroundColor="#A9A9A9"
+                        HorizontalTextAlignment="Center"/>
+
+                <Label Text="Descrição:" FontSize="Small" TextColor="#C0C0C0"
+                       Margin="5,0,15,0"/>
+                <Label
+                        Margin="15,0,15,0"
+                        Text="{Binding Local.Descricao}"  
+                        TextColor="#808080"
+                        FontSize="Medium"
+                        HorizontalTextAlignment="Start" />
+
+                <Label Text="Endereço:" FontSize="Small" TextColor="#C0C0C0"
+                       Margin="5,0,15,0"/>
+                <Label
+                        Margin="15,0,15,0"
+                        Text="{Binding Local.Endereco}"  
+                        TextColor="#808080"
+                        FontSize="Medium"
+                        HorizontalTextAlignment="Start" />
+
+                <StackLayout Orientation="Horizontal" VerticalOptions="End" >
+                    <Label Text="Enviado por:" FontSize="Small" TextColor="#C0C0C0"
+                       Margin="5,0,15,0"/>
+                    <Label
+                        Margin="15,0,15,0"
+                        Text="@Ariel"  
+                        TextColor="#808080"
+                        FontSize="Small"
+                        HorizontalTextAlignment="End" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+    
+    
+
+    

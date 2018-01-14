@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TourBox.Views.LocaisView"
+             Title="Locais">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+			Text="Add"
+			Command="{Binding AddLocalCommand}"
+		/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <!--<Button 
+				Text="Carregar Locais" 
+				Command="{Binding GetLocaisCommand}"
+			/>-->
+
+            <ActivityIndicator 
+				IsRunning="{Binding IsBusy}" 
+				IsVisible="{Binding IsBusy}"
+			/>
+
+            <ListView
+				ItemsSource="{Binding Locais}"
+				ItemTapped="OnItemTapped"
+                HasUnevenRows="True"
+			>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="35,10,35,5">
+                                <Label Text="{Binding Nome}"
+                                       TextColor="Black"
+                                       FontSize="Large"
+                                       />
+                                <Label Text="{Binding Descricao}"
+                                       TextColor="Gray"
+                                       FontSize="Small"
+                                       />
+                            </StackLayout>
+                        </ViewCell>
+                        
+                        <!--<ImageCell 
+							Text="{Binding Nome}"
+							Detail="{Binding Descricao}" 
+                            ImageSource="{Binding Photo}"
+						/>-->
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

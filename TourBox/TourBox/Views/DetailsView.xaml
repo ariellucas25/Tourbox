@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TourBox.Views.DetailsView"
+             Title="Details">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+			Text="Enviar"
+            Command="{Binding SaveCommand}"
+		/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView Padding="10">
+            <StackLayout Spacing="10">
+                <Image Source="{Binding Photo}" HeightRequest="80">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer 
+			                Command="{Binding ChangePhotoCommand}"
+			            />
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Entry
+				    Text="{Binding Local.Nome}"
+				    Placeholder="Nome"
+				/>
+
+                <Entry
+				    Text="{Binding Local.Descricao}"
+				    Placeholder="Descrição"
+				/>
+
+                <Entry
+				    Text="{Binding Local.Endereco}"
+				    Placeholder="Endereço"
+				/>
+
+                <!--<Button 
+			        Text="Delete"
+			        Command="{Binding DeleteCommand}"
+			    />-->
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

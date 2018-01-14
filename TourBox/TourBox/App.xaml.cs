@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿using TourBox.Views;
 using Xamarin.Forms;
 
 namespace TourBox
@@ -13,7 +9,7 @@ namespace TourBox
         {
             InitializeComponent();
 
-            MainPage = new TourBox.MainPage();
+            MainPage = new NavigationPage(new CidadesView());
         }
 
         protected override void OnStart()

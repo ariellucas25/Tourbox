@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TourBox.Views.CidadesView"
+             Title="Cidades"
+             >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+			    Text="About"
+                Order="Primary"
+		    />
+        <ToolbarItem 
+			    Text="Sair"
+                Order="Secondary"
+		    />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Image Source="itajai.jpg">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                                Command="{Binding TapCommand}"
+                                CommandParameter="Image1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label
+                    Text="Guia de Turismo Natural"
+                    TextColor="White"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    BackgroundColor="#3CB371"
+                    HorizontalTextAlignment="Center"
+                    >
+                </Label>
+
+                <Label
+                    Margin="0,5,0,0"
+                    Text="      Sobre a Cidade:"
+                    TextColor="#696969"
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    HorizontalTextAlignment="Start"
+                    >
+                </Label>
+
+                <Label
+                    Margin="15,0,15,0"
+                    Text="     Itajaí localiza-se no litoral centro-norte do Estado de Santa Catarina junto à foz do Rio Itajaí-Açu. A cidade encontra-se em uma região estratégica do território catarinense. Localizada na margem direita do maior rio do estado, integra um eixo de ligação com as principais rodovias e aeroportos do Brasil."
+                    TextColor="#808080"
+                    FontSize="Medium"
+                    HorizontalTextAlignment="Start"
+                    >
+                </Label>
+
+                <Label
+                    Margin="15,0,15,0"
+                    Text="     Itajaí conta ainda com belas paisagens naturais, do meio rural às praias, coroadas por atrativos turísticos como o Bico do Papagaio, Parque Natural da Atalaia, Molhe, entre outros. Com tanta beleza natural, não faltam esportes de aventura para todos os gostos: caminhadas, surfe, cicloturismo, voo ao ar livre, trilhas, rapel..."
+                    TextColor="#808080"
+                    FontSize="Medium"
+                    HorizontalTextAlignment="Start"
+                    >
+                </Label>
+
+                <Label
+                    Margin="15,0,15,0"
+                    Text="     Embarque nesta viagem natural, conhecendo os principais pontos turisticos desta bela cidade e sinta-se à vontade para cadastrar novos locais! :)"
+                    TextColor="#808080"
+                    FontSize="Medium"
+                    HorizontalTextAlignment="Start" >
+                </Label>
+
+                <Button
+                    Margin="70,10,70,50"
+                    Text="Explorar!"
+                    TextColor="White"
+                    Command="{Binding TapCommand}"
+                    BackgroundColor="#D3D3D3">
+                    
+                </Button>
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
+
+
